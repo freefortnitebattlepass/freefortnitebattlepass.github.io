@@ -1,0 +1,32 @@
+header {
+    margin: 0, auto;
+    background-color: darkorchid;
+    text-align: center;
+    padding: 1cm;
+}
+
+header p {
+    font-size: 1cm;
+    font-family: cursive;
+}
+
+.cuerpo img {
+    height: 400px;
+    width: 1200px;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+footer {
+    background-color: blue;
+    margin: 0, auto;
+    padding: 30px;
+}
+
+footer p {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: larger;
+}
