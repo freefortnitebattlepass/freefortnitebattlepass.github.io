@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Posicionamiento grid general para toda la web */
+.grid {
+    display: grid;
+    grid-template-columns: auto 20%;
+    grid-template-areas:
+        "header header"
+        "section aside"
+        "footer footer";
+}
+
+/* Formato para el header, color de fondo, display flex para mostrar sus elementos uno al lado de otro,
+y la definición de su grid area */
+header {
+    background-color: #00042B;
+    padding: 1em;
+    grid-area: header;
+    display: flex;
+}
+
+/* Tamaño de la imagen del header */
+header img {
+    height: 7em;
+}
+
+/* Formato para la lista desordenada que usa el nav, formato flex y sin estilo de lista. */
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 8%;
+}
+
+/* Margen para cada elemento de la lista */
+nav ul li {
+    margin-right: 2em;
+}
+
+/* Enlaces del nav de color gris, y sin decoración */
+nav ul li a {
+    text-decoration: none;
+    font-size: 110%;
+    color: grey;
+}
+
+/* Hover de los enlaces del nav de color blanco y con medio segundo de transicion. */
+nav ul li a:hover {
+    color: white;
+    transition-duration: 500ms;
+}
+
+/* Sección de la página con un gradiente como background, un border superior azul para delimitar con el header
+un padding, y la definición de su grid area. */
+section {
+    grid-area: section;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    border-top: solid;
+    border-color: blue;
+    padding: 2em;
+}
+
+/* Formato de color y tamaño para los h2 de section */
+section h2 {
+    color: grey;
+    font-weight: normal;
+}
+
+/* Enlaces dentro de section sin decoración */
+section a{
+    text-decoration: none;
+}
+
+/* Bloque div para cada juego, muestra sus elementos en un flex
+uno al lado del otro, tiene formato justificado con espacio para
+cada elemento, color de fondo, y un radio para el borde.*/
+.juego {
+    display: flex;
+    margin: 1em;
+    background-color: darkblue;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1em;
+}
+
+/* Hover para los bloques de juego, cambia el color
+de fondo y tiene una transición */
+.juego:hover{
+    background-color: blue;
+    transition-duration: 600ms;
+}
+
+/* Tamaño y radio de borde para las fotos de los
+juegos en el bloque div juego */
+.juego img {
+    width: 12em;
+    border-radius: 1em;
+}
+
+/* Formato para los párrafos de .juego */
+.juego p {
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Aside que se encuentra a la derecha de section. Grid area definido, como
+fondo, un gradiente inverso al del section para dar un efecto de progresión. Borde
+superior para separar con el header */
+aside {
+    grid-area: aside;
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%, 100%, rgba(2, 0, 36, 1) 100%);
+    border-top: solid;
+    border-color: blue;
+    padding: 20px;
+}
+
+/* Enlaces del aside de color blanco y sin decoración */
+aside a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hover para los enlaces, se ponen en negrita */
+aside a:hover{
+    font-weight: bold;
+}
+
+/* Padding para cada elemento de la lista */
+aside li{
+    padding-bottom: 1em;
+}
+
+/* Quita los puntos de la lista */
+aside ul{
+    list-style-type: none;
+}
+
+/* Footer definido en el grid area, con un color de fondo,
+padding, color de texto, texto alineado al centro, y borde
+superior para diferenciar de los dos bloques anteriores. */
+footer {
+    grid-area: footer;
+    background-color: rgb(1, 1, 66);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-top: solid;
+    border-color: blue;
+}
+
+/* Formato para dispositivos móviles con una anchura máxima de 600px */
+@media screen and (max-width: 600px) {
+
+    /* Grid template con el aside debajo del section */
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+          "header"
+          "section"
+          "aside"
+          "footer";
+    }
+  
+    /* Padding para section y aside */
+    section, aside {
+      padding: 1em;
+    }
+  
+    /* Tamaño de la imagen de cada juego */
+    .juego img {
+      width: 30%;
+    }
+
+    .juego p{
+        font-size: 90%;
+    }
+  
+  }
+  
